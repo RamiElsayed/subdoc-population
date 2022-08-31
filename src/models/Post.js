@@ -11,8 +11,8 @@ const postSchema = {
   },
   tags: [
     {
-      type: 'Tag',
-      ref: 'Tag',
+      type: Schema.Types.ObjectId,
+      ref: 'tag',
     },
   ],
   text: {

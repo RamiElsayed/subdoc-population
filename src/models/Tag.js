@@ -20,12 +20,10 @@ const schema = new Schema(tagSchema, {
   },
 });
 
-schema.virtual("getTagCss")
-  // Getter
-  .get(function () {
+schema.virtual("getTagCss").get(function () {
     return `color: ${this.color}`;
   });
 
-const Tag = model("tag", tagSchema);
+const Tag = model("tag", schema);
 
 module.exports = Tag;
