@@ -3,8 +3,6 @@ const { faker } = require("@faker-js/faker")
 
 const { Post, Tag } = require('../models');
 
-const { getRandomColor, getRandomPost, genRandomIndex } = require('./data');
-
 // Start the seeding runtime timer
 console.time('seeding');
 
@@ -45,9 +43,9 @@ const init = async () => {
     const tags = tagsArray.map(() => {
       const randomTagIndex = Math.floor(Math.random() * tagsFormDb.length);
       const randomTagId = tagsFormDb[randomTagIndex].get("_id");
-
       return randomTagId;
     })
+
     return {
     published: Math.random() < 0.5,
     createdAt: faker.date.past(5),
